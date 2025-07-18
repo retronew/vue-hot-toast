@@ -1,0 +1,52 @@
+{
+  "name": "@retronew/vue-hot-toast",
+  "type": "module",
+  "version": "0.1.0",
+  "private": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "build:lib": "vue-tsc && vite build --mode lib",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "prepublishOnly": "pnpm run build:lib",
+    "release": "bumpp --commit --push --tag && pnpm publish --access public"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.17"
+  },
+  "dependencies": {
+    "@vueuse/core": "^13.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.17.0",
+    "@microsoft/api-extractor": "^7.52.8",
+    "@types/node": "^24.0.14",
+    "@unocss/eslint-config": "^66.3.3",
+    "@unocss/eslint-plugin": "^66.3.3",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/tsconfig": "^0.7.0",
+    "bumpp": "^10.2.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-format": "^1.0.1",
+    "sass-embedded": "^1.89.2",
+    "typescript": "~5.8.3",
+    "unocss": "^66.3.3",
+    "unplugin-dts": "1.0.0-beta.4",
+    "vite": "^7.0.5",
+    "vue-tsc": "^3.0.2"
+  }
+}
