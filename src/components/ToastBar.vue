@@ -60,6 +60,7 @@ function getAnimationStyle(
     <template v-else>
       <slot name="icon">
         <ToastIcon
+          v-if="toast.type !== 'blank'"
           :type="toast.type"
           :icon="toast.icon"
           :icon-theme="toast.iconTheme"
@@ -84,6 +85,7 @@ function getAnimationStyle(
   --toast-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
 
   display: flex;
+  gap: 10px;
   align-items: center;
   background: var(--toast-background);
   color: var(--toast-color);
@@ -92,8 +94,8 @@ function getAnimationStyle(
   box-shadow: var(--toast-box-shadow);
   max-width: 350px;
   pointer-events: auto;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
 
   @media (prefers-color-scheme: dark) {
     --toast-background: #1a1a1a;
@@ -105,7 +107,6 @@ function getAnimationStyle(
 .message-wrapper {
   display: flex;
   justify-content: center;
-  margin: 4px 10px;
   color: inherit;
   flex: 1 1 auto;
   white-space: pre-line;
